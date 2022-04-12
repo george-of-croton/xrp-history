@@ -1,5 +1,5 @@
-# EOS HISTORY DOWNLOADER
-## download an EOS accounts transactions history
+# RIPPLE HISTORY DOWNLOADER
+## download an XRP account's balance history
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://travis-ci.org/joemccann/dillinger)
 
@@ -11,5 +11,6 @@
 ### Usage
 
 - To start the download run `yarn start <accountname>`. This will beging the download into the local postgres database. once the download is complete you can use a tool like tablePlus, psql, dbeaver to connect to the db at localhost:5432.
-- Then you can run whatever queries you like: for example:
-``
+
+### Notes
+- New ripple ledgers are publish on average every 3 seconds. The downloader makes the rather naive assumption that each day will contain 28800 ledgers which is not always the case. if you need you more fine grain balance data you can decrease this value with whatever you want.
